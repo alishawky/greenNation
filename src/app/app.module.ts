@@ -6,24 +6,37 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FwModule } from '../fw/fw.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CountriesComponent } from './countries/countries.component';
 import { SettingsComponent } from './settings/settings.component';
 import { appRoutes } from './app.routing';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
+import { CountryListComponent } from './country-list/country-list.component';
+import { CountryMaintComponent } from './country-maint/country-maint.component';
+import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
+import { UserService } from './_services/user.service';
+import { UserAPI } from '../fw/users/user-api';
+import { AuthGuardService } from './_services/auth-guard.service';
 
 
 @NgModule({
    declarations: [
       AppComponent,
       DashboardComponent,
-      CountriesComponent,
-      SettingsComponent
+      SettingsComponent,
+      CountryDetailComponent,
+      CountryListComponent,
+      CountryMaintComponent,
+      AuthenticatedUserComponent
    ],
    imports: [
       BrowserModule,
       FwModule,
       RouterModule.forRoot(appRoutes)
    ],
-   providers: [],
+   providers: [
+       UserService,
+       { provide: UserAPI, useExisting: UserService},
+       AuthGuardService
+   ],
    bootstrap: [
       AppComponent
    ]
