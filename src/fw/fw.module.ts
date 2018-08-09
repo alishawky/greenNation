@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
 import { ContentComponent } from './content/content.component';
@@ -10,10 +12,15 @@ import { StatusBarComponent } from './status-bar/status-bar.component';
 import { ScreenService } from './_services/screen.service';
 import { ScreenLargeDirective } from './_directives/screen-large.directive';
 import { ScreenBelowLargeDirective } from './_directives/screen-below-large.directive';
+import { MenuService } from './_services/menu.service';
+import { MenuComponent } from './menus/menu/menu.component';
+import { MenuItemComponent } from './menus/menu-item/menu-item.component';
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     FrameworkBodyComponent,
@@ -22,11 +29,14 @@ import { ScreenBelowLargeDirective } from './_directives/screen-below-large.dire
     TopBarComponent,
     StatusBarComponent,
     ScreenLargeDirective,
-    ScreenBelowLargeDirective
+    ScreenBelowLargeDirective,
+    MenuComponent,
+    MenuItemComponent
   ],
   providers: [
     FrameworkConfigService,
-    ScreenService
+    ScreenService,
+    MenuService
   ],
   exports: [
     FrameworkBodyComponent
