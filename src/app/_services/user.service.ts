@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { UserAPI } from '../../fw/users/user-api';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Router } from '../../../node_modules/@angular/router';
+import { delay } from 'rxjs/operators';
+
+
+import { UserAPI } from '../../fw/users/user-api';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +19,7 @@ export class UserService implements UserAPI {
   signIn(username: string, password: string, rememberMe: boolean): Observable<any> {
     console.log('UserService.signIn: ' + username + ' ' + password + ' ' + rememberMe);
     this.isAuthenticated = true;
-    return of({});
+    return of({}).pipe(delay(2000));
   }
 
   signOut(): Observable<any> {
