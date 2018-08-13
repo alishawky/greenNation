@@ -17,6 +17,8 @@ import { UserService } from './_services/user.service';
 import { UserAPI } from '../fw/users/user-api';
 import { AuthGuardService } from './_services/auth-guard.service';
 import { AppDataService } from './_services/app-data.service';
+import { CountryPanelComponent } from './panels/country-panel/country-panel.component';
+import { ImagePanelComponent } from './panels/image-panel/image-panel.component';
 
 
 
@@ -28,7 +30,9 @@ import { AppDataService } from './_services/app-data.service';
       CountryDetailComponent,
       CountryListComponent,
       CountryMaintComponent,
-      AuthenticatedUserComponent
+      AuthenticatedUserComponent,
+      CountryPanelComponent,
+      ImagePanelComponent
    ],
    imports: [
       BrowserModule,

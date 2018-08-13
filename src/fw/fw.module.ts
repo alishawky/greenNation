@@ -21,6 +21,7 @@ import { SignInComponent } from './users/sign-in/sign-in.component';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
 import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
 import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+import { PanelComponent } from './panels/panel/panel/panel.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.
     SignInComponent,
     RegisterUserComponent,
     DynamicFieldComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    PanelComponent
   ],
   providers: [
     FrameworkConfigService,
@@ -53,7 +55,8 @@ import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.
   ],
   exports: [
     FrameworkBodyComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    PanelComponent
   ]
 })
 export class FwModule { }
